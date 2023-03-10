@@ -1,0 +1,70 @@
+---
+title: "R_For_Data_Science_Exercises"
+format: pdf
+---
+
+Chapter 1: Data Visualization Exercises
+
+
+
+```{r}
+library(tidyverse)
+library(palmerpenguins)
+library(ggthemes)
+
+#1. How many rows are in penguins? How many columns?
+#ANSWER; 8 ROWS
+palmerpenguins::penguins
+
+#2. What does the bill_depth_mm variable in the penguins data frame describe?
+#Read the help for ?penguins to find out.
+
+#ANSWER: A NUMBER DENOTING THE BILL DEPTH IN MILLIMETERS!
+?penguins
+
+#3. Make a scatterplot of bill_depth_mm vs. bill_length_mm. Describe the 
+#relationship between these two variables. 
+
+ggplot(
+  data = penguins,
+  mapping = aes(x = bill_length_mm,
+                y = bill_depth_mm)) +
+  geom_point()
+#Answer: The deeper the depth, the longer the length,
+
+#4. What happens if you make a scatterplot of species vs bill_depth_mm? Why
+#is the plot not useful?
+ggplot(
+  data = penguins,
+  mapping = aes(x = species,
+                y = bill_depth_mm)) +
+  geom_point()
+#Since species is a variable and it isnt linear so we can't get a relationship from the data
+
+
+#5. Why does the following give an error and how would you fix it?
+        #ggplot(data = penguins) +
+#             geom_point()
+#Answers: The x and y are not specified, just need to give it an x and y and it will be graphed. 
+
+#6. What does the na.rm arguments do in geom_point()? What is the default value of
+# the agrument? Create a scatterplot where you successfully use the argument set to
+# TRUE.
+
+#7. Add the following caption to the plot you made in the previous exercise:
+# Data come from the palmerpenguins package." Hint: take a look at the documentation
+# for labs().
+
+#8. Recreate the following visualization. What aesthetic should bill_depth_mm be mapped to? 
+# And should it be mapped at the global level or at the geom level. 
+
+
+
+
+
+
+
+
+
+```
+
